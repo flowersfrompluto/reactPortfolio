@@ -1,38 +1,629 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+    scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2D2D2D;
+    border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+body {
+    background-color: #02050a;
+    color: #ffffff;
+}
+
+li {
+    list-style: none;
+}
+
+.wide {
+    width: 83%;
+    margin-left: 17%;
+    height: 100vh;
+    padding: 85px 40px;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+/* NAV BAR STARTS HERE */
+
+nav {
+    color: #a2a2a2;
+    background-color: #09101a;
+    position: fixed;
+    width: 17%;
+    height: 100%;
+    z-index: 99;
+    overflow-y: auto;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+nav .logo {
+    background-color: #151C25;
+    padding: 50px;
+    align-items: center;
+}
+
+nav img {
+    height: 40px;
+}
+
+nav .links {
+    padding: 60px 30px;
+    grid-template-columns: 1fr;
+    row-gap: 25px
+}
+
+nav .links .linkContainer {
+    align-items: center;
+}
+
+.linkContainer {
+    border: 1px solid #ffffff1a;
+    border-radius: 5px;
+}
+
+.imgBox {
+    border-radius: 5px;
+    padding: 9px 15px;
+    background-color: #222831;
+    background-color: #55E6A5;
+}
+
+/* svg{
+    fill: #ffffff;
+} */
+.imgBox img {
+    width: 30px;
+}
+
+.nav-link {
+    padding-left: 15px;
+    text-decoration: none;
+    color: #a2a2a2;
+}
+
+.me {
+    padding-left: 5px;
+}
+
+
+/* HOME PAGE STARTS HERE */
+
+.home {
+    margin-right: 50%;
+    background-image: url(./img/banner_bg2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: initial;
+    background-position-x: -30px;
+}
+
+.home h1 {
+    width: 50%;
+    font-size: 60px;
+}
+
+.home span {
+    color: #55E6A5;
+}
+
+.home .hometxt {
+    width: 50%;
+    padding: 30px 30px 50px 0px;
+    line-height: 27px;
+    color: #a2a2a2;
+    font-size: 16px;
+}
+
+.home .btns {
+    justify-content: space-between;
+    width: 35%;
+}
+
+.home .btns button {
+    padding: 20px 40px;
+    background-color: #55E6A5;
+    border: none;
+
+}
+
+.home .btns span {
+    padding-left: 5px;
+}
+
+.home .playImg {
+    background-color: #55E6A5;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.home .playImg img {
+    width: 30px;
+}
+
+.home .vid {
+    align-items: center;
+}
+
+.home .vid p {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+
+/* ABOUT PAGE STARTS HERE */
+
+.abtTxt {
+    width: 73%;
+    padding: 30px 0px 70px 0px;
+}
+
+.abtTxt h1 {
+    font-size: 55px;
+}
+
+.abtTxt h2 {
+    font-size: 20px;
+    color: #55E6A5;
+    font-weight: 400;
+}
+
+.abtbody {
+    background-image: url(./img/about_shapes.png);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    padding-bottom: 50px;
+}
+
+.aboutLeft {
+    width: 50%;
+    padding-top: 30px;
+}
+
+.aboutLeft img {
+    width: 120px;
+}
+
+.aboutLeft h3 {
+    font-size: 30px;
+}
+
+.aboutLeft p {
+    padding: 20px 20px 40px 0px;
+    color: #a2a2a2;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.aboutRight {
+    width: 50%;
+    padding-top: 30px;
+}
+
+.aboutRight img {
+    height: 600px;
+}
+
+.stamp {
+    background-color: #55E6A5;
+    border-radius: 5px;
+    width: 25%;
+    padding: 20px;
+    align-items: center;
+    position: absolute;
+    margin-top: -75px;
+    margin-left: 170px;
+}
+
+.stamp .img {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+    position: relative;
+}
+
+.stamp img {
+    height: 60px;
+}
+
+.StampTxt {
+    padding-left: 25px;
+    color: #02050a;
+}
+
+.StampTxt h1 {
+    font-size: 48px;
+}
+
+
+/* SERVICE PAGE STARTS HERE */
+
+.servicesTxt {
+    width: 73%;
+    margin: auto;
+    text-align: center;
+    padding: 0px 0px 50px 0px;
+}
+
+.servicesTxt h1 {
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+
+.servicesTxt h2 {
+    font-size: 20px;
+    color: #55E6A5;
+    font-weight: 400;
+}
+
+.servicesRow {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.servicesRow .col1,
+.servicesRow .col2,
+.servicesRow .col3 {
+    padding: 15px;
+    height: 350px;
+}
+
+.relative .serviceImg {
+    padding-left: 20px;
+}
+
+.servicesRow .relative {
+    padding-bottom: 20px;
+}
+
+.servicesRow .relative img {
+    margin-top: -60px;
+    height: 90px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    background-color: #55E6A5;
+}
+
+.servicesRow .relative .items {
+    padding: 20px;
+    background-color: #09101a;
+    height: 310px;
+    border-radius: 10px;
+}
+
+.relative .items h3 {
+    padding-top: 25px;
+}
+
+.relative .items p {
+    width: 90%;
+    font-size: 18px;
+    color: #a2a2a2;
+    padding: 20px 0px 30px 0;
+    line-height: 25px;
+}
+
+.serviceBtn {
+    padding-top: 260px;
+    padding-left: 100px;
+}
+
+.serviceBtn button {
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 1px solid #55E6A5;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+
+/* SKILL PAGE STARTS HERE */
+.skillContainer {
+    width: 83%;
+    margin-left: 17%;
+    height: 100vh;
+    padding: 0px 40px;
+}
+
+.skill {
+    padding-top: 85px;
+    background-color: #09101a;
+}
+
+.skillTxt {
+    width: 73%;
+    margin: auto;
+    text-align: center;
+    padding: 0px 0px 00px 0px;
+}
+
+.skillTxt h1 {
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+
+.skillTxt h2 {
+    font-size: 20px;
+    color: #55E6A5;
+    font-weight: 400;
+}
+
+.skillBtn {
+    justify-content: space-between;
+    width: 55%;
+    margin: auto;
+}
+
+.skillBtn button {
+    padding: 15px 30px;
+    color: #ffffff;
+    background-color: #141c27;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.skillBtn span {
+    padding-left: 5px;
+}
+
+.skillRow {
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    gap: 20px;
+}
+
+.skillRow .col1,
+.skillRow .col2,
+.skillRow .col3,
+.skillRow .col4 {
+    border: 1px solid #141c27;
+    padding: 20px;
+}
+
+.skillRow h3 {
+    padding-top: 20px;
+}
+
+.skillRow h2 {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.skillRow h4 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.skillRow p {
+    /* font-size: 20px; */
+    padding-bottom: 20px;
+}
+
+.pTag p {
+    line-height: 25px;
+    color: #a2a2a2;
+    width: 90%;
+    font-size: 18px;
+}
+
+.middle {
+    margin-top: 10px;
+    float: left;
+    width: 90%;
+    padding-bottom: 20px;
+}
+
+.bar-container {
+    width: 100%;
+    background-color: #141c27;
+    text-align: center;
+    color: white;
+}
+
+.bar-1 {
+    width: 46%;
+    height: 8px;
+    background-color: #55E6A5;
+}
+
+.bar-2 {
+    width: 58%;
+    height: 8px;
+    background-color: #55E6A5;
+}
+
+.bar-3 {
+    width: 69%;
+    height: 8px;
+    background-color: #55E6A5;
+}
+
+.bar-4 {
+    width: 80%;
+    height: 8px;
+    background-color: #55E6A5;
+}
+
+
+/* PORTFOLIO PAGE STARTS HERE */
+
+.portTxt {
+    width: 80%;
+    padding: 30px 0px 70px 0px;
+}
+
+.portTxt h1 {
+    font-size: 50px;
+}
+
+.portTxt h2 {
+    font-size: 20px;
+    color: #55E6A5;
+    font-weight: 400;
+}
+
+.row1Portfolio {
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.row1Portfolio img {
+    height: 583px;
+}
+
+.row2Portfolio {
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.row2Portfolio .col1,
+.row2Portfolio .col2,
+.row2Portfolio .col3 {
+    border-radius: 50px;
+}
+
+.row2Portfolio img {
+    border-radius: 10px;
+    height: 362px;
+}
+
+
+/* BLOG PAGE STARTS HERE */
+
+.blog {
+    width: 100%;
+    margin-left: 0%;
+    height: auto;
+    padding: 85px 0px;
+}
+
+.scrollTxt {
+    overflow: hidden;
+    width: 100%;
+    font-size: 30px;
+    padding: 5px 0px;
+    color: #09101a;
+    text-transform: uppercase;
+    background-color: #55E6A5;
+}
+
+.scroll {
+    width: 800%;
+    transform: translateX(0px);
+    /* animation: RightToLeft 20.005s 0s infinite linear; */
+    /* animation: RightToLeft 20.005s linear 0s infinite normal none running; */
+    animation: RightToLeft 20.055s linear 0s infinite normal none running;
+    overflow: hidden;
+    font-size: 100px;
+}
+
+@keyframes RightToLeft {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.scrollTxt li {
+    padding-left: 30px;
+}
+
+.blogTxt {
+    width: 73%;
+    margin: auto;
+    text-align: center;
+    padding: 0px 0px 50px 0px;
+}
+
+.blogTxt h1 {
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+
+.blogTxt h2 {
+    font-size: 20px;
+    color: #55E6A5;
+    font-weight: 400;
+}
+
+.blog {
+    padding-top: 85px;
+    background-color: #09101a;
+    padding: 85px 40px 0 40px;
+}
+
+.blogRow2 {
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 20px;
+    gap: 15px;
+    background-color: #09101a;
+}
+
+.blogRow2 .col1,
+.blogRow2 .col2,
+.blogRow2 .col3 {
+    border-radius: 50px;
+}
+
+.blogRow2 .img img {
+    border-radius: 10px;
+    height: 240px;
+    width: 351px;
+}
+
+.blogRow2 .col1 p,
+.blogRow2 .col2 p,
+.blogRow2 .col3 p {
+    color: #a2a2a2;
+}
+
+.texts {
+    width: 70%;
+    justify-content: space-between;
 }
